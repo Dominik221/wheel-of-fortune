@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
+
+	<!-- Metadata info -->
+	<title></title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="">
+	<meta name="googlebot" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon images -->
+
+	<!-- Viewport for mobile devices -->
+	<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="./output.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght,HEXP@160..700,0..100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		:where(.ui-wheel-of-fortune) {
+			--_items: 12;
+			aspect-ratio: 1 / 1;
+			container-type: inline-size;
+			direction: ltr;
+			display: grid;
+			position: relative;
+			will-change: transform;
+
+			& > * {
+				position: absolute;
+			}
+
+			#button {
+				cursor: pointer;
+				place-self: center;
+			}
+
+			#button.disabled div {
+				pointer-events: none;
+			}
+
+			ul {
+				all: unset;
+				clip-path: inset(0 0 0 0 round 50%);
+				display: grid;
+				inset: 0;
+				place-content: center start;
+
+				li {
+					align-content: center;
+					aspect-ratio: 1 / calc(2 * tan(180deg / var(--_items)));
+					clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+					display: grid;
+					grid-area: 1 / -1;
+					padding-left: 1ch;
+					rotate: calc(360deg / var(--_items) * calc(var(--_idx) - 1));
+					transform-origin: center right;
+					user-select: none;
+					width: 50cqi;
+
+					&:nth-of-type(1) {
+						--_idx: 1;
+						background: linear-gradient(339deg, #EF7F1A 69.98%, #FFA439 87.32%);
+					}
+
+					/* 1 Výhra */
+
+					&:nth-of-type(2) {
+						--_idx: 2;
+						background: linear-gradient(193deg, #FEF3E9 8.6%, #F1DDCB 29.06%);
+					}
+
+					/* 2 Prehra */
+
+					&:nth-of-type(3) {
+						--_idx: 3;
+						background-color: #66B940;
+					}
+
+					/* 3 Točiť ďalej */
+
+					&:nth-of-type(4) {
+						--_idx: 4;
+						background: linear-gradient(193deg, #FEF3E9 8.6%, #F1DDCB 29.06%);
+					}
+
+					/* 4 Prehra */
+
+					&:nth-of-type(5) {
+						--_idx: 5;
+						background-color: #66B940;
+					}
+
+					/* 5 Točiť ďalej */
+
+					&:nth-of-type(6) {
+						--_idx: 6;
+						background: linear-gradient(193deg, #FEF3E9 8.6%, #F1DDCB 29.06%);
+					}
+
+					/* 6 Prehra */
+
+					&:nth-of-type(7) {
+						--_idx: 7;
+						background: linear-gradient(339deg, #EF7F1A 69.98%, #FFA439 87.32%);
+					}
+
+					/* 7 Výhra */
+
+					&:nth-of-type(8) {
+						--_idx: 8;
+						background: linear-gradient(193deg, #FEF3E9 8.6%, #F1DDCB 29.06%);
+					}
+
+					/* 8 Prehra */
+
+					&:nth-of-type(9) {
+						--_idx: 9;
+						background-color: #66B940;
+					}
+
+					/* 9 Točiť ďalej */
+
+					&:nth-of-type(10) {
+						--_idx: 10;
+						background: linear-gradient(193deg, #FEF3E9 8.6%, #F1DDCB 29.06%);
+					}
+
+					/* 10 Prehra */
+
+					&:nth-of-type(11) {
+						--_idx: 11;
+						background-color: #66B940;
+					}
+
+					/* 11 Točiť ďalej */
+
+					&:nth-of-type(12) {
+						--_idx: 12;
+						background: linear-gradient(193deg, #FEF3E9 8.6%, #F1DDCB 29.06%);
+					}
+
+					/* 12 Prehra */
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+<header id="header" class="bg-white w-full relative z-30">
+	<div class="border-b w-full border-b-light-4">
+		<div class="relative flex justify-between container p-0 h-[64px] items-center">
+			<div class="flex items-center pl-5 w-full">
+				<div id="mobileMenu" class="absolute left-0 flex justify-center items-center w-[61px] h-[63px] block md:hidden">
+					<svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18"
+							 fill="none" class="block md:hidden">
+						<rect width="21" height="2" rx="1" transform="matrix(-1 0 0 1 21 0)" fill="#080B10"></rect>
+						<rect x="21" y="10" width="21" height="2" rx="1" transform="rotate(180 21 10)" fill="#080B10"></rect>
+						<rect x="10.5" y="18" width="10.5" height="2" rx="1" transform="rotate(180 10.5 18)" fill="#080B10"></rect>
+					</svg>
+
+					<svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"
+							 class="hidden">
+						<path
+							d="M0.294033 0.294038C0.686077 -0.0980127 1.32171 -0.0980127 1.71375 0.294038L16.7057 15.2862C17.0977 15.6783 17.0977 16.3139 16.7057 16.706C16.3137 17.098 15.678 17.098 15.286 16.706L0.294034 1.71378C-0.0980106 1.32173 -0.0980117 0.686089 0.294033 0.294038Z"
+							fill="#080B10"></path>
+						<path
+							d="M16.706 0.294038C16.3139 -0.0980127 15.6783 -0.0980127 15.2863 0.294038L0.294309 15.2862C-0.0977358 15.6783 -0.0977369 16.3139 0.294308 16.706C0.686352 17.098 1.32198 17.098 1.71403 16.706L16.706 1.71378C17.098 1.32173 17.098 0.686089 16.706 0.294038Z"
+							fill="#080B10"></path>
+					</svg>
+				</div>
+				<div class="w-px h-[63px] bg-zinc-200 ml-10 mr-5 md:hidden"></div>
+				<div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden"
+						 style="top: 65px; background: rgba(24, 43, 74, 0.70); backdrop-filter: blur(3px);"></div>
+
+				<div id="sidebar" class="hidden sidebar fixed top-[65px] left-0 h-full w-[313px] shadow-lg z-50 bg-white">
+					<div class="pl-[21px]">
+						<a class="flex items-center gap-[14px] py-4 text-sm tex-dark-1 font-medium leading-[24.5px]"
+							 href="/obchody">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+								<path
+									d="M7.85714 7.22979C7.85714 7.41424 7.7849 7.59113 7.6563 7.72156C7.5277 7.85198 7.35329 7.92525 7.17143 7.92525H1.68571C1.50386 7.92525 1.32944 7.85198 1.20084 7.72156C1.07224 7.59113 1 7.41424 1 7.22979V1.66616C1 1.48172 1.07224 1.30482 1.20084 1.17439C1.32944 1.04397 1.50386 0.970703 1.68571 0.970703H7.17143C7.35329 0.970703 7.5277 1.04397 7.6563 1.17439C7.7849 1.30482 7.85714 1.48172 7.85714 1.66616V7.22979Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path
+									d="M17 7.22979C17 7.41424 16.9278 7.59113 16.7992 7.72156C16.6706 7.85198 16.4961 7.92525 16.3143 7.92525H10.8286C10.6467 7.92525 10.4723 7.85198 10.3437 7.72156C10.2151 7.59113 10.1429 7.41424 10.1429 7.22979V1.66616C10.1429 1.48172 10.2151 1.30482 10.3437 1.17439C10.4723 1.04397 10.6467 0.970703 10.8286 0.970703H16.3143C16.4961 0.970703 16.6706 1.04397 16.7992 1.17439C16.9278 1.30482 17 1.48172 17 1.66616V7.22979Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path
+									d="M17 17.2752C17 17.4597 16.9278 17.6366 16.7992 17.767C16.6706 17.8974 16.4961 17.9707 16.3143 17.9707H10.8286C10.6467 17.9707 10.4723 17.8974 10.3437 17.767C10.2151 17.6366 10.1429 17.4597 10.1429 17.2752V11.7116C10.1429 11.5272 10.2151 11.3503 10.3437 11.2198C10.4723 11.0894 10.6467 11.0162 10.8286 11.0162H16.3143C16.4961 11.0162 16.6706 11.0894 16.7992 11.2198C16.9278 11.3503 17 11.5272 17 11.7116V17.2752Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path
+									d="M7.85714 17.2752C7.85714 17.4597 7.7849 17.6366 7.6563 17.767C7.5277 17.8974 7.35329 17.9707 7.17143 17.9707H1.68571C1.50386 17.9707 1.32944 17.8974 1.20084 17.767C1.07224 17.6366 1 17.4597 1 17.2752V11.7116C1 11.5272 1.07224 11.3503 1.20084 11.2198C1.32944 11.0894 1.50386 11.0162 1.68571 11.0162H7.17143C7.35329 11.0162 7.5277 11.0894 7.6563 11.2198C7.7849 11.3503 7.85714 11.5272 7.85714 11.7116V17.2752Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+							Obchody s odměnami
+						</a>
+						<a class="flex items-center gap-[14px] py-4 text-sm tex-dark-1 font-medium leading-[24.5px]" href="/slevy">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+								<path
+									d="M12.4071 4.34222C12.4071 4.61379 12.5152 4.87423 12.7075 5.06626C12.8998 5.25829 13.1606 5.36617 13.4325 5.36617C13.7045 5.36617 13.9653 5.25829 14.1576 5.06626C14.3499 4.87423 14.4579 4.61379 14.4579 4.34222C14.4579 4.07066 14.3499 3.81021 14.1576 3.61819C13.9653 3.42616 13.7045 3.31828 13.4325 3.31828C13.1606 3.31828 12.8998 3.42616 12.7075 3.61819C12.5152 3.81021 12.4071 4.07066 12.4071 4.34222Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path
+									d="M15.8963 1.00002H9.22412C9.07344 1.00094 8.92441 1.03228 8.78619 1.09215C8.64791 1.15203 8.52315 1.23921 8.41947 1.34845L1.29871 8.93557C1.1974 9.0423 1.11882 9.16844 1.06771 9.30639C1.0166 9.44434 0.994026 9.59118 1.00135 9.73808C1.00867 9.88492 1.04574 10.0288 1.11031 10.161C1.17488 10.2931 1.26562 10.4109 1.37704 10.507L8.4978 16.7289C8.71342 16.9165 8.99355 17.0131 9.27909 16.9986C9.56471 16.984 9.83344 16.8593 10.0288 16.6507L16.7009 9.53998C16.893 9.33882 17.0002 9.07138 17 8.79335V2.09507C17 1.95067 16.9714 1.80769 16.9158 1.67437C16.8603 1.54104 16.7789 1.42001 16.6763 1.31823C16.5738 1.21645 16.452 1.13594 16.3181 1.08133C16.1842 1.02672 16.0409 0.999086 15.8963 1.00002Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+							Slevové kupóny
+						</a>
+						<a class="flex items-center gap-[14px] py-4 text-sm tex-dark-1 font-medium leading-[24.5px]"
+							 href="/jak-to-funguje">
+							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 10.6V17V10.6Z" fill="#ECEDF0"></path>
+								<path
+									d="M1 15.9333H12.7333C12.7333 15.3676 12.5085 14.8249 12.1085 14.4249C11.7084 14.0248 11.1657 13.8 10.6 13.8H7.93332C7.93332 13.2342 7.70854 12.6916 7.30848 12.2915C6.90841 11.8914 6.36579 11.6667 5.79999 11.6667H1"
+									fill="#ECEDF0"></path>
+								<path d="M5.26666 13.8H7.93332H5.26666Z" fill="#ECEDF0"></path>
+								<path
+									d="M5.18133 1H16.0186C16.2815 1.00375 16.5321 1.11127 16.716 1.2991C16.8998 1.48693 17.0019 1.73985 17 2.00267V8.17511C17.0019 8.43794 16.8998 8.69081 16.716 8.87868C16.5321 9.06649 16.2815 9.17401 16.0186 9.17778H5.18133C4.91853 9.17401 4.66788 9.06649 4.48403 8.87868C4.3002 8.69081 4.1981 8.43794 4.2 8.17511V2.00267C4.1981 1.73985 4.3002 1.48693 4.48403 1.2991C4.66788 1.11127 4.91853 1.00375 5.18133 1Z"
+									fill="#ECEDF0"></path>
+								<path
+									d="M8.99999 5.08889C8.99999 5.51324 9.16859 5.9202 9.46861 6.22026C9.7687 6.52032 10.1757 6.68889 10.6 6.68889C11.0243 6.68889 11.4313 6.52032 11.7314 6.22026C12.0314 5.9202 12.2 5.51324 12.2 5.08889C12.2 4.66454 12.0314 4.25758 11.7314 3.95752C11.4313 3.65746 11.0243 3.48889 10.6 3.48889C10.1757 3.48889 9.7687 3.65746 9.46861 3.95752C9.16859 4.25758 8.99999 4.66454 8.99999 5.08889Z"
+									fill="#ECEDF0"></path>
+								<path d="M6.15555 3.31111H7.22221H6.15555Z" fill="#ECEDF0"></path>
+								<path d="M13.9778 6.86667H15.0444H13.9778Z" fill="#ECEDF0"></path>
+								<path
+									d="M1 10.6V17M1 15.9333H12.7333C12.7333 15.3676 12.5085 14.8249 12.1085 14.4249C11.7084 14.0248 11.1657 13.8 10.6 13.8H7.93332M7.93332 13.8C7.93332 13.2342 7.70854 12.6916 7.30848 12.2915C6.90841 11.8914 6.36579 11.6667 5.79999 11.6667H1M7.93332 13.8H5.26666M6.15555 3.31111H7.22221M13.9778 6.86667H15.0444M5.18133 1H16.0186C16.2815 1.00375 16.5321 1.11127 16.716 1.2991C16.8998 1.48693 17.0019 1.73985 17 2.00267V8.17511C17.0019 8.43794 16.8998 8.69081 16.716 8.87868C16.5321 9.06649 16.2815 9.17401 16.0186 9.17778H5.18133C4.91853 9.17401 4.66788 9.06649 4.48403 8.87868C4.3002 8.69081 4.1981 8.43794 4.2 8.17511V2.00267C4.1981 1.73985 4.3002 1.48693 4.48403 1.2991C4.66788 1.11127 4.91853 1.00375 5.18133 1ZM8.99999 5.08889C8.99999 5.51324 9.16859 5.9202 9.46861 6.22026C9.7687 6.52032 10.1757 6.68889 10.6 6.68889C11.0243 6.68889 11.4313 6.52032 11.7314 6.22026C12.0314 5.9202 12.2 5.51324 12.2 5.08889C12.2 4.66454 12.0314 4.25758 11.7314 3.95752C11.4313 3.65746 11.0243 3.48889 10.6 3.48889C10.1757 3.48889 9.7687 3.65746 9.46861 3.95752C9.16859 4.25758 8.99999 4.66454 8.99999 5.08889Z"
+									stroke="#080B10" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+
+							Jak získat odměny?
+						</a>
+					</div>
+				</div>
+
+				<a href="/">
+					<svg class="w-[60px] h-[29px] md:w-[78px] md:h-[39px]" width="78" height="39" viewBox="0 0 78 39" fill="none"
+							 xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M21.8419 7.28024H27.4368V27.3415H21.8419V7.28024ZM62.3468 27.1098V7.50599H67.482V27.1103L62.3468 27.1098ZM53.2192 27.1098V0.339844H58.3599V27.1103L53.2192 27.1098ZM44.8271 17.2604C44.8271 16.7853 44.7389 16.2929 44.5681 15.7818C44.3914 15.2713 44.1325 14.808 43.7673 14.3987C43.4003 13.9803 42.9524 13.6383 42.4536 13.3957C41.9294 13.1404 41.3407 13.0155 40.6812 13.0155H36.3999V21.4635H40.6812C41.3407 21.4635 41.9294 21.3268 42.4536 21.0538C43.4112 20.5591 44.1557 19.7269 44.5441 18.7153C44.7326 18.2225 44.8266 17.7415 44.8266 17.2609L44.8271 17.2604ZM30.9054 7.42876H40.6576C42.3655 7.42876 43.8377 7.73174 45.086 8.33724C46.3342 8.94275 47.359 9.72042 48.1658 10.6766C49.6897 12.4899 50.5378 14.7884 50.5573 17.1664C50.536 19.5748 49.6825 21.9042 48.148 23.7493C47.3068 24.76 46.2584 25.5826 45.0801 26.1595C43.8477 26.7477 42.4981 27.0548 41.134 27.0548C40.9878 27.0548 40.8374 27.0516 40.6921 27.0448L36.3999 27.0444V34.0148H30.9054V7.42876ZM9.75216 21.3091C9.28111 21.3091 8.79233 21.2201 8.28585 21.0479C7.24699 20.6845 6.39393 19.9173 5.91879 18.917C5.66577 18.3947 5.54178 17.7951 5.54178 17.136V13.1222H14.216V7.476H5.54131V0.339844H0V17.1123C0 18.828 0.300248 20.3179 0.901213 21.5707C1.50172 22.8294 2.27349 23.8624 3.22149 24.676C4.1695 25.4895 5.21199 26.0891 6.3426 26.4866C7.47912 26.8845 8.58658 27.0862 9.65814 27.0862C10.7297 27.0862 11.843 26.8845 12.9973 26.4866C19.1509 24.3611 19.463 18.6617 19.463 15.8118H13.9689C13.9571 17.0351 13.8631 18.2461 13.5156 18.917C13.2507 19.4335 12.921 19.8728 12.5262 20.2226C11.7576 20.9026 10.7742 21.2882 9.75216 21.3091ZM21.8419 0.339844H27.4368V5.98697H21.8419V0.339844Z"
+									fill="#646C7C"></path>
+						<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M62.3465 0.339844H67.4817V5.52319H62.3465V0.339844ZM74.6606 26.552L77.9998 29.7285C73.133 34.8664 68.2344 38.395 61.1623 38.5867C53.9952 38.2737 49.1076 34.5285 44.4961 29.7403L47.8116 26.5342C51.5042 30.3808 55.5742 33.6854 61.1973 33.9375C66.8531 33.7695 70.745 30.6779 74.6606 26.552Z"
+									fill="#EF7F1A"></path>
+					</svg>
+				</a>
+
+				<div class="hidden md:block h-[65px] w-[1px] bg-light-4 mx-[25px] -my-2.5"></div>
+
+				<a class="hidden md:flex items-center cursor-pointer gap-2  xl:hover:text-primary-orange" href="/obchody">
+					<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M7.85714 7.25909C7.85714 7.44353 7.7849 7.62043 7.6563 7.75085C7.5277 7.88127 7.35329 7.95455 7.17143 7.95455H1.68571C1.50386 7.95455 1.32944 7.88127 1.20084 7.75085C1.07224 7.62043 1 7.44353 1 7.25909V1.69545C1 1.51101 1.07224 1.33412 1.20084 1.20369C1.32944 1.07327 1.50386 1 1.68571 1H7.17143C7.35329 1 7.5277 1.07327 7.6563 1.20369C7.7849 1.33412 7.85714 1.51101 7.85714 1.69545V7.25909Z"
+							stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+						<path
+							d="M17 7.25909C17 7.44353 16.9278 7.62043 16.7992 7.75085C16.6706 7.88127 16.4961 7.95455 16.3143 7.95455H10.8286C10.6467 7.95455 10.4723 7.88127 10.3437 7.75085C10.2151 7.62043 10.1429 7.44353 10.1429 7.25909V1.69545C10.1429 1.51101 10.2151 1.33412 10.3437 1.20369C10.4723 1.07327 10.6467 1 10.8286 1H16.3143C16.4961 1 16.6706 1.07327 16.7992 1.20369C16.9278 1.33412 17 1.51101 17 1.69545V7.25909Z"
+							stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+						<path
+							d="M17 17.3045C17 17.489 16.9278 17.6659 16.7992 17.7963C16.6706 17.9267 16.4961 18 16.3143 18H10.8286C10.6467 18 10.4723 17.9267 10.3437 17.7963C10.2151 17.6659 10.1429 17.489 10.1429 17.3045V11.7409C10.1429 11.5565 10.2151 11.3796 10.3437 11.2491C10.4723 11.1187 10.6467 11.0455 10.8286 11.0455H16.3143C16.4961 11.0455 16.6706 11.1187 16.7992 11.2491C16.9278 11.3796 17 11.5565 17 11.7409V17.3045Z"
+							stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+						<path
+							d="M7.85714 17.3045C7.85714 17.489 7.7849 17.6659 7.6563 17.7963C7.5277 17.9267 7.35329 18 7.17143 18H1.68571C1.50386 18 1.32944 17.9267 1.20084 17.7963C1.07224 17.6659 1 17.489 1 17.3045V11.7409C1 11.5565 1.07224 11.3796 1.20084 11.2491C1.32944 11.1187 1.50386 11.0455 1.68571 11.0455H7.17143C7.35329 11.0455 7.5277 11.1187 7.6563 11.2491C7.7849 11.3796 7.85714 11.5565 7.85714 11.7409V17.3045Z"
+							stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+					</svg>
+
+					<div class="font-medium text-sm leading-[24.5px]">
+						Obchody s odměnami
+					</div>
+				</a>
+			</div>
+
+			<div class="flex items-center shrink-0 gap-6">
+				<a class="hidden font-medium hover:underline text-sm leading-[24.5px] md:block" href="/prihlaseni">
+					Přihlásit se
+				</a>
+				<a
+					class="px-7 py-3 rounded-xl bg-orange-gradient text-white font-medium text-sm leading-[24.5px] mr-2 md:mr-0 cursor-pointer xl:hover:bg-orange-gradient-hover"
+					href="/registrace">
+					Vytvořit účet
+				</a>
+			</div>
+		</div>
+	</div>
+
+</header>
+
+<div class="bg-primary-blue-dark min-h-screen">
+	<div class="absolute top-0 left-[-1000px] md:top-[-50px] md:left-[900px] z-0 md:z-20">
+		<img class="blur-3xl" src="{$basePath}/new-design/gives-out-bg-circle-wheel.svg" alt="circle">
+	</div>
+
+	<div class="container relative px-0">
+		<div class="hidden lg:block absolute top-0 left-[-250px] md:z-20">
+			<img src="{$basePath}/new-design/gives-out-bg-star-wheel.svg" alt="star">
+		</div>
+
+		<div class="flex flex-col md:flex-row justify-center gap-[25px] md:gap-10 pt-10 md:pt-[74px]">
+			<div class="text-white z-50 md:pt-[58px]">
+				<div class="text-[26px] md:text-[45px] font-bold leading-[39px] md:leading-[60px] mb-[5px] md:mb-2.5 text-nowrap px-10 md:px-0">Zatoč koleso
+					šťastia
+					🎡</div>
+				<div
+					class="text-sm md:text-lg leading-[24.5px] md:leading-[31.5px] md:mb-[29px] w-full max-w-[387px] px-10 md:px-0">Každý deň
+					dostávate 1 zatočenie a	za každý
+					nákup ďalšie.
+				</div>
+
+				<div class="hidden md:flex gap-2.5 mb-[15px]">
+					<div
+						class="item-tab flex items-center gap-[9px] text-sm py-2 px-[14px] border border-[#46556E] rounded-lg hover:cursor-pointer"
+						id="tab-1"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+							<path
+								d="M3.52436 8.64836L1 11.7333L3.33333 12.2L4.26667 15L6.72071 11.1061M12.4756 8.64836L15 11.7333L12.6667 12.2L11.7333 15L9.27929 11.1061M2.86667 6.13333C2.86667 7.49476 3.4075 8.80049 4.37019 9.76313C5.33287 10.7258 6.63855 11.2667 8 11.2667C9.36142 11.2667 10.6672 10.7258 11.6298 9.76313C12.5925 8.80049 13.1333 7.49476 13.1333 6.13333C13.1333 4.77189 12.5925 3.4662 11.6298 2.50352C10.6672 1.54083 9.36142 1 8 1C6.63855 1 5.33287 1.54083 4.37019 2.50352C3.4075 3.4662 2.86667 4.77189 2.86667 6.13333ZM8.3304 3.20382L9.10693 4.73325H10.4304C10.5033 4.73147 10.5749 4.75171 10.6361 4.79134C10.6973 4.83096 10.7451 4.88811 10.7732 4.95533C10.8014 5.02255 10.8086 5.0967 10.794 5.16809C10.7793 5.23947 10.7435 5.30478 10.6911 5.35547L9.47591 6.5489L10.1492 8.09514C10.1788 8.16595 10.1856 8.24428 10.1683 8.31908C10.151 8.39393 10.1107 8.46144 10.053 8.51209C9.99534 8.5628 9.92316 8.59404 9.84676 8.6015C9.77035 8.60897 9.6935 8.59223 9.62711 8.55372L8 7.63843L6.37289 8.55372C6.3065 8.59223 6.22967 8.60897 6.15324 8.6015C6.07682 8.59404 6.00468 8.5628 5.947 8.51209C5.8893 8.46144 5.84899 8.39393 5.83174 8.31908C5.81449 8.24428 5.82118 8.16595 5.85085 8.09514L6.52409 6.5489L5.3089 5.35298C5.25654 5.30229 5.22068 5.23698 5.20603 5.1656C5.19138 5.0942 5.19861 5.02005 5.22677 4.95284C5.25493 4.88562 5.30272 4.82847 5.36389 4.78885C5.42505 4.74922 5.49675 4.72898 5.56961 4.73076H6.89307L7.67022 3.20382C7.70196 3.14379 7.74943 3.09353 7.80761 3.05848C7.86579 3.02343 7.93243 3.00491 8.00031 3.00491C8.06826 3.00491 8.13484 3.02343 8.19301 3.05848C8.25119 3.09353 8.29867 3.14379 8.3304 3.20382Z"
+								stroke="white" stroke-linecap="round" />
+						</svg>
+						Výhry
+					</div>
+					<div
+						class="item-tab flex items-center gap-[9px] text-sm py-2 px-[14px] border border-[#46556E] rounded-lg hover:cursor-pointer"
+						id="tab-2"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+							<path
+								d="M8 5.5V8L11.1247 11.1253M1 8C1 9.85653 1.7375 11.637 3.05025 12.9497C4.36301 14.2625 6.14349 15 8 15C9.85653 15 11.637 14.2625 12.9497 12.9497C14.2625 11.637 15 9.85653 15 8C15 6.14349 14.2625 4.36301 12.9497 3.05025C11.637 1.7375 9.85653 1 8 1C6.14349 1 4.36301 1.7375 3.05025 3.05025C1.7375 4.36301 1 6.14349 1 8Z"
+								stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						História
+					</div>
+					<div
+						class="item-tab flex items-center gap-[9px] text-sm py-2 px-[14px] border border-[#46556E] rounded-lg hover:cursor-pointer"
+						id="tab-3"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+							<path
+								d="M5.45455 8.38636L7.07879 9.90909L10.5455 6.72727M1 8C1 9.85653 1.7375 11.637 3.05025 12.9497C4.36301 14.2625 6.14349 15 8 15C9.85653 15 11.637 14.2625 12.9497 12.9497C14.2625 11.637 15 9.85653 15 8C15 6.14349 14.2625 4.36301 12.9497 3.05025C11.637 1.7375 9.85653 1 8 1C6.14349 1 4.36301 1.7375 3.05025 3.05025C1.7375 4.36301 1 6.14349 1 8Z"
+								stroke="white" stroke-linecap="round" />
+						</svg>
+						Podmienky
+					</div>
+				</div>
+
+				<div style="background: rgba(48, 65, 93, 0.20);"
+						 class="hidden md:block backdrop-blur px-[30px] py-[25px] rounded-2xl w-full max-w-[409px]">
+					<div id="content-1">
+						<div class="text-lg font-bold leading-[31.5px] mb-[15px]">Čo môžete vyhrať:</div>
+						<ul>
+							<li class="flex items-center gap-3 leading-7 mb-3">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+									<circle cx="10.5" cy="10.5" r="10.5" fill="url(#paint0_linear_1292_10303)" />
+									<path d="M7 11.0332L9.23333 13.127L14 8.75195" stroke="white" stroke-width="1.78531"
+												stroke-linecap="round" />
+									<defs>
+										<linearGradient id="paint0_linear_1292_10303" x1="6.77461e-07" y1="21" x2="19.0521" y2="5.5406"
+																		gradientUnits="userSpaceOnUse">
+											<stop stop-color="#EF7F1A" />
+											<stop offset="1" stop-color="#FFA439" />
+										</linearGradient>
+									</defs>
+								</svg>
+								+ 2 € k ďalšiemu nákupu
+							</li>
+							<li class="flex items-center gap-3 leading-7 mb-3">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+									<circle cx="10.5" cy="10.5" r="10.5" fill="url(#paint0_linear_1292_10303)" />
+									<path d="M7 11.0332L9.23333 13.127L14 8.75195" stroke="white" stroke-width="1.78531"
+												stroke-linecap="round" />
+									<defs>
+										<linearGradient id="paint0_linear_1292_10303" x1="6.77461e-07" y1="21" x2="19.0521" y2="5.5406"
+																		gradientUnits="userSpaceOnUse">
+											<stop stop-color="#EF7F1A" />
+											<stop offset="1" stop-color="#FFA439" />
+										</linearGradient>
+									</defs>
+								</svg>
+								Ďalšie okienko na šťastný obchod
+							</li>
+							<li class="flex items-center gap-3 leading-7 mb-3">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+									<circle cx="10.5" cy="10.5" r="10.5" fill="url(#paint0_linear_1292_10303)" />
+									<path d="M7 11.0332L9.23333 13.127L14 8.75195" stroke="white" stroke-width="1.78531"
+												stroke-linecap="round" />
+									<defs>
+										<linearGradient id="paint0_linear_1292_10303" x1="6.77461e-07" y1="21" x2="19.0521" y2="5.5406"
+																		gradientUnits="userSpaceOnUse">
+											<stop stop-color="#EF7F1A" />
+											<stop offset="1" stop-color="#FFA439" />
+										</linearGradient>
+									</defs>
+								</svg>
+								+ 2 € k ďalšiemu nákupu
+							</li>
+							<li class="flex items-center gap-3 leading-7 mb-3">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+									<circle cx="10.5" cy="10.5" r="10.5" fill="url(#paint0_linear_1292_10303)" />
+									<path d="M7 11.0332L9.23333 13.127L14 8.75195" stroke="white" stroke-width="1.78531"
+												stroke-linecap="round" />
+									<defs>
+										<linearGradient id="paint0_linear_1292_10303" x1="6.77461e-07" y1="21" x2="19.0521" y2="5.5406"
+																		gradientUnits="userSpaceOnUse">
+											<stop stop-color="#EF7F1A" />
+											<stop offset="1" stop-color="#FFA439" />
+										</linearGradient>
+									</defs>
+								</svg>
+								+ 2 € k ďalšiemu nákupu
+							</li>
+							<li class="flex items-center gap-3 leading-7 mb-3">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+									<circle cx="10.5" cy="10.5" r="10.5" fill="url(#paint0_linear_1292_10303)" />
+									<path d="M7 11.0332L9.23333 13.127L14 8.75195" stroke="white" stroke-width="1.78531"
+												stroke-linecap="round" />
+									<defs>
+										<linearGradient id="paint0_linear_1292_10303" x1="6.77461e-07" y1="21" x2="19.0521" y2="5.5406"
+																		gradientUnits="userSpaceOnUse">
+											<stop stop-color="#EF7F1A" />
+											<stop offset="1" stop-color="#FFA439" />
+										</linearGradient>
+									</defs>
+								</svg>
+								+ 2 € k ďalšiemu nákupu
+							</li>
+							<li class="flex items-center gap-3 leading-7">
+								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+									<circle cx="10.5" cy="10.5" r="10.5" fill="url(#paint0_linear_1292_10303)" />
+									<path d="M7 11.0332L9.23333 13.127L14 8.75195" stroke="white" stroke-width="1.78531"
+												stroke-linecap="round" />
+									<defs>
+										<linearGradient id="paint0_linear_1292_10303" x1="6.77461e-07" y1="21" x2="19.0521" y2="5.5406"
+																		gradientUnits="userSpaceOnUse">
+											<stop stop-color="#EF7F1A" />
+											<stop offset="1" stop-color="#FFA439" />
+										</linearGradient>
+									</defs>
+								</svg>
+								+ 2 € k ďalšiemu nákupu
+							</li>
+						</ul>
+					</div>
+
+					<div id="content-2" class="hidden">
+						<div class="text-lg font-bold leading-[31.5px] mb-[15px]">História</div>
+					</div>
+					<div id="content-3" class="hidden">
+						<div class="text-lg font-bold leading-[31.5px] mb-[15px]">Podmienky</div>
+					</div>
+				</div>
+			</div>
+			<div class="px-5 md:px-0">
+				<div class="ui-wheel-of-fortune relative border border-[15px] border-dark-1/20 rounded-full w-full md:w-[537px]">
+					<ul class="text-[10px] md:text-base z-30">
+						<li class="rounded-[20px] md:rounded-[30px] text-sm md:text-[22px] font-bold text-white uppercase">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[87deg] bottom-[-28px]">
+									🔥 <span>výhra</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[92deg] bottom-[-46px] leading-[20px] pb-5">
+									😢 <span class="text-dark-1/40">dnes to <br> nevyšlo</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="pl-4 rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[90deg] bottom-[-44px] leading-[20px] pb-5">
+									🎯 <span class="text-white/80">ďalší <br>	pokus</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[92deg] bottom-[-46px] leading-[20px] pb-5">
+									😢 <span class="text-dark-1/40">dnes to <br> nevyšlo</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="pl-4 rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[90deg] bottom-[-44px] leading-[20px] pb-5">
+									🎯 <span class="text-white/80">ďalší <br>	pokus</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[92deg] bottom-[-46px] leading-[20px] pb-5">
+									😢 <span class="text-dark-1/40">dnes to <br> nevyšlo</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] text-sm md:text-[22px] font-bold text-white uppercase">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[87deg] bottom-[-28px]">
+									🔥 <span>výhra</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[92deg] bottom-[-46px] leading-[20px] pb-5">
+									😢 <span class="text-dark-1/40">dnes to <br> nevyšlo</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="pl-4 rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[90deg] bottom-[-44px] leading-[20px] pb-5">
+									🎯 <span class="text-white/80">ďalší <br>	pokus</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[92deg] bottom-[-46px] leading-[20px] pb-5">
+									😢 <span class="text-dark-1/40">dnes to <br> nevyšlo</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="pl-4 rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[90deg] bottom-[-44px] leading-[20px] pb-5">
+									🎯 <span class="text-white/80">ďalší <br>	pokus</span>
+								</div>
+							</div>
+						</li>
+
+						<li class="rounded-[20px] md:rounded-[30px] font-bold uppercase flex gap-1.5 items-center">
+							<div class="relative">
+								<div class="absolute flex flex-col gap-2 text-center rotate-[92deg] bottom-[-46px] leading-[20px] pb-5">
+									😢 <span class="text-dark-1/40">dnes to <br> nevyšlo</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40">
+						<div id="button" class="relative">
+							<img src="{$basePath}/new-design/wheel-of-fortune-button.svg" alt="točiť">
+							<div
+								class="absolute inset-0 flex items-center justify-center text-center z-50 font-bold text-dark-1 text-sm md:text-[22px] uppercase">
+								<span>zatočiť</span>
+							</div>
+						</div>
+					</div>
+					<div class="absolute bottom-[-38px] md:bottom-[-70px] left-1/2 transform -translate-x-1/2 mb-4 z-40">
+						<img class="w-[37px] md:w-full" src="{$basePath}/new-design/wheel-of-fortune-forefinger.svg"
+								 alt="indikátor">
+					</div>
+					<div class="absolute bottom-[-42px] md:bottom-[-70px] left-1/2 transform -translate-x-1/2 mb-4 z-10">
+						<img class="w-[47px] md:w-full" src="{$basePath}/new-design/wheel-of-fortune-forefinger-bg.svg" alt="bg">
+					</div>
+
+					<div class="hidden md:block absolute right-[-44px] top-[70px]">
+						<svg xmlns="http://www.w3.org/2000/svg" width="56" height="55" viewBox="0 0 56 55" fill="none">
+							<path
+								d="M32.1801 45.2898L32.8943 45.0609L32.1801 45.2898ZM49.5634 35.4222L49.14 36.0412L49.5634 35.4222ZM1.21657 23.6111C0.805763 23.6641 0.515681 24.0401 0.568655 24.4509C0.621628 24.8617 0.997601 25.1518 1.40841 25.0988L1.21657 23.6111ZM47.5122 1.223C47.4062 0.822581 46.9957 0.5839 46.5952 0.689895L40.07 2.41717C39.6696 2.52316 39.4309 2.9337 39.5369 3.33412C39.6429 3.73454 40.0534 3.97322 40.4538 3.86723L46.254 2.33187L47.7894 8.1321C47.8954 8.53253 48.3059 8.77121 48.7064 8.66521C49.1068 8.55922 49.3455 8.14869 49.2395 7.74826L47.5122 1.223ZM31.4658 45.5186C33.1037 50.6311 36.1604 53.3813 39.6378 54.3214C43.0747 55.2506 46.7871 54.3744 49.7182 52.52C52.6436 50.6691 54.9093 47.7661 55.3222 44.5041C55.7428 41.1818 54.2183 37.6979 49.9869 34.8032L49.14 36.0412C53.022 38.6969 54.1681 41.6774 53.8341 44.3157C53.4925 47.0144 51.5782 49.5682 48.9162 51.2524C46.2598 52.933 42.9772 53.6703 40.0292 52.8734C37.1217 52.0873 34.4035 49.7717 32.8943 45.0609L31.4658 45.5186ZM49.9869 34.8032C43.4487 30.3305 36.7554 26.8148 28.9317 24.7787C21.1076 22.7424 12.1918 22.1959 1.21657 23.6111L1.40841 25.0988C12.2278 23.7037 20.9466 24.2505 28.5539 26.2303C36.1616 28.2102 42.6965 31.6334 49.14 36.0412L49.9869 34.8032ZM46.1388 1.03796C41.1781 9.57025 36.5596 17.6681 33.6567 25.1043C30.7569 32.5326 29.5153 39.4304 31.4658 45.5186L32.8943 45.0609C31.1016 39.4653 32.1975 32.9672 35.054 25.6498C37.9075 18.3403 42.4641 10.3428 47.4355 1.79189L46.1388 1.03796Z"
+								fill="url(#paint0_linear_1292_10396)" />
+							<defs>
+								<linearGradient id="paint0_linear_1292_10396" x1="1.29062" y1="27.3652" x2="28.001" y2="26"
+																gradientUnits="userSpaceOnUse">
+									<stop stop-color="#234884" />
+									<stop offset="1" stop-color="#66B940" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</div>
+					<div class="hidden md:block absolute border-2 border-secondary-green rounded-[20px] py-[15px] px-5 -top-2.5 right-[-120px] z-50">
+						<div class="text-sm leading-[20px] text-white">Máte ešte</div>
+						<div class="leading-[20px] text-secondary-green">1 zatočenie</div>
+					</div>
+				</div>
+
+				<div
+					class="md:hidden border border-secondary-green rounded-lg py-[15px] mt-[60px] text-center mb-[30px] bg-secondary-green/10 backdrop-blur-md">
+					<div class="text-sm leading-[20px] text-white">Máte ešte <span
+						class="leading-[20px] text-secondary-green font-bold">1 zatočenie</span></div>
+				</div>
+
+				<div
+					class="md:hidden border border-secondary-red rounded-lg py-[15px] mt-[60px] text-center mb-[30px] bg-secondary-red/10 backdrop-blur-md">
+					<div class="text-sm leading-[20px] text-white">Dnes už <span
+						class="leading-[20px] text-secondary-red font-bold">nemáte</span> zatočenie</div>
+				</div>
+
+				<div class="md:hidden flex items-center justify-center underline text-white text-sm gap-2 my-5">
+					<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+						<g opacity="0.5">
+							<path d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M8.42188 7.60742V12.207" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+							<circle cx="8.41848" cy="4.88723" r="0.906757" fill="white"/>
+						</g>
+					</svg>
+					Ako získať ďalšie zatočenie?
+				</div>
+
+				<div class="md:hidden h-px w-full bg-white/10 mb-[30px]"></div>
+
+				<div class="md:hidden text-sm text-white font-bold leading-[24.5px] text-center mb-2.5">
+					Vyhral dnes váš šťastný obchod?
+				</div>
+
+				<button
+					class="md:hidden bg-orange-gradient w-full text-white rounded-xl py-[14px] mb-10 font-bold"
+					style="box-shadow: 6px 6px 13.5px 0 rgba(239, 127, 26, 0.51);"
+				>
+					Skontrolovať štastný obchod
+				</button>
+
+				<!-- MOBILE TABS -->
+				<div class="text-white">
+					<div class="md:hidden flex gap-2.5 mb-[15px]">
+						<div
+							class="item-tab-mobile flex items-center gap-[9px] text-sm py-2 px-[14px] border border-[#46556E] rounded-lg hover:cursor-pointer"
+							id="tab-1-mobile"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+								<path
+									d="M3.52436 8.64836L1 11.7333L3.33333 12.2L4.26667 15L6.72071 11.1061M12.4756 8.64836L15 11.7333L12.6667 12.2L11.7333 15L9.27929 11.1061M2.86667 6.13333C2.86667 7.49476 3.4075 8.80049 4.37019 9.76313C5.33287 10.7258 6.63855 11.2667 8 11.2667C9.36142 11.2667 10.6672 10.7258 11.6298 9.76313C12.5925 8.80049 13.1333 7.49476 13.1333 6.13333C13.1333 4.77189 12.5925 3.4662 11.6298 2.50352C10.6672 1.54083 9.36142 1 8 1C6.63855 1 5.33287 1.54083 4.37019 2.50352C3.4075 3.4662 2.86667 4.77189 2.86667 6.13333ZM8.3304 3.20382L9.10693 4.73325H10.4304C10.5033 4.73147 10.5749 4.75171 10.6361 4.79134C10.6973 4.83096 10.7451 4.88811 10.7732 4.95533C10.8014 5.02255 10.8086 5.0967 10.794 5.16809C10.7793 5.23947 10.7435 5.30478 10.6911 5.35547L9.47591 6.5489L10.1492 8.09514C10.1788 8.16595 10.1856 8.24428 10.1683 8.31908C10.151 8.39393 10.1107 8.46144 10.053 8.51209C9.99534 8.5628 9.92316 8.59404 9.84676 8.6015C9.77035 8.60897 9.6935 8.59223 9.62711 8.55372L8 7.63843L6.37289 8.55372C6.3065 8.59223 6.22967 8.60897 6.15324 8.6015C6.07682 8.59404 6.00468 8.5628 5.947 8.51209C5.8893 8.46144 5.84899 8.39393 5.83174 8.31908C5.81449 8.24428 5.82118 8.16595 5.85085 8.09514L6.52409 6.5489L5.3089 5.35298C5.25654 5.30229 5.22068 5.23698 5.20603 5.1656C5.19138 5.0942 5.19861 5.02005 5.22677 4.95284C5.25493 4.88562 5.30272 4.82847 5.36389 4.78885C5.42505 4.74922 5.49675 4.72898 5.56961 4.73076H6.89307L7.67022 3.20382C7.70196 3.14379 7.74943 3.09353 7.80761 3.05848C7.86579 3.02343 7.93243 3.00491 8.00031 3.00491C8.06826 3.00491 8.13484 3.02343 8.19301 3.05848C8.25119 3.09353 8.29867 3.14379 8.3304 3.20382Z"
+									stroke="white" stroke-linecap="round" />
+							</svg>
+							Výhry
+						</div>
+						<div
+							class="item-tab-mobile flex items-center gap-[9px] text-sm py-2 px-[14px] border border-[#46556E] rounded-lg hover:cursor-pointer"
+							id="tab-2-mobile"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M8 5.5V8L11.1247 11.1253M1 8C1 9.85653 1.7375 11.637 3.05025 12.9497C4.36301 14.2625 6.14349 15 8 15C9.85653 15 11.637 14.2625 12.9497 12.9497C14.2625 11.637 15 9.85653 15 8C15 6.14349 14.2625 4.36301 12.9497 3.05025C11.637 1.7375 9.85653 1 8 1C6.14349 1 4.36301 1.7375 3.05025 3.05025C1.7375 4.36301 1 6.14349 1 8Z"
+									stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+							História
+						</div>
+						<div
+							class="item-tab-mobile flex items-center gap-[9px] text-sm py-2 px-[14px] border border-[#46556E] rounded-lg hover:cursor-pointer"
+							id="tab-3-mobile"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+								<path
+									d="M5.45455 8.38636L7.07879 9.90909L10.5455 6.72727M1 8C1 9.85653 1.7375 11.637 3.05025 12.9497C4.36301 14.2625 6.14349 15 8 15C9.85653 15 11.637 14.2625 12.9497 12.9497C14.2625 11.637 15 9.85653 15 8C15 6.14349 14.2625 4.36301 12.9497 3.05025C11.637 1.7375 9.85653 1 8 1C6.14349 1 4.36301 1.7375 3.05025 3.05025C1.7375 4.36301 1 6.14349 1 8Z"
+									stroke="white" stroke-linecap="round" />
+							</svg>
+							Podmienky
+						</div>
+					</div>
+
+					<div class="md:hidden w-full max-w-[409px]">
+						<div id="content-1-mobile" class="bg-[#30415D] px-[25px] py-[25px] rounded-2xl">
+							<div class="text-sm font-bold leading-[24.5px] mb-2.5">Čo môžete vyhrať:</div>
+							<ul class="text-xs">
+								<li class="flex items-center gap-3 leading-7 mb-3">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+										<circle cx="8" cy="8" r="8" fill="url(#paint0_linear_1292_8591)"/>
+										<path d="M5.33594 8.40411L7.03752 9.99935L10.6693 6.66602" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+										<defs>
+											<linearGradient id="paint0_linear_1292_8591" x1="5.16161e-07" y1="16" x2="14.5159" y2="4.22141" gradientUnits="userSpaceOnUse">
+												<stop stop-color="#EF7F1A"/>
+												<stop offset="1" stop-color="#FFA439"/>
+											</linearGradient>
+										</defs>
+									</svg>
+									+ 2 € k ďalšiemu nákupu
+								</li>
+								<li class="flex items-center gap-3 leading-7">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+										<circle cx="8" cy="8" r="8" fill="url(#paint0_linear_1292_8591)"/>
+										<path d="M5.33594 8.40411L7.03752 9.99935L10.6693 6.66602" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+										<defs>
+											<linearGradient id="paint0_linear_1292_8591" x1="5.16161e-07" y1="16" x2="14.5159" y2="4.22141" gradientUnits="userSpaceOnUse">
+												<stop stop-color="#EF7F1A"/>
+												<stop offset="1" stop-color="#FFA439"/>
+											</linearGradient>
+										</defs>
+									</svg>
+									+ 2 € k ďalšiemu nákupu
+								</li>
+							</ul>
+						</div>
+
+						<div id="content-2-mobile" class="hidden flex flex-col gap-5">
+							<div class="history-card text-sm font-bold leading-[24.5px] bg-[#30415D] p-5 rounded-2xl">
+								Dvojnásobná odmena (kupónik)
+								<div class="flex justify-between items-center mt-[3px]">
+									<div class="text-sm leading-[24.5px]">20.08.2024</div>
+									<div class="toggle-detail flex items-center gap-[5px] text-xs text-dark-4">
+										Zobraziť detail
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4" fill="none">
+											<path d="M0.495117 0.597656L2.6606 3.05763C2.97183 3.41118 3.52274 3.41118 3.83397 3.05763L5.99945 0.597656" stroke="#ADB3BF"/>
+										</svg>
+									</div>
+								</div>
+
+								<div class="toggle-content hidden">
+									<div class="md:hidden h-px w-full bg-white/10 my-5"></div>
+
+									<div class="text-center text-white text-xs leading-[21px] mb-[11px]">
+										Kupónik nájdete a môžete si ho aktivovať v sekcii 1
+									</div>
+
+									<div class="text-center">
+										<button class="m-auto text-xs text-primary-orange leading-[21px] py-[7px] px-[30px] border border-primary-orange rounded-lg">
+											Moje výhody
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="history-card text-sm font-bold leading-[24.5px] bg-[#30415D] p-5 rounded-2xl">
+								Dvojnásobná odmena (kupónik)
+								<div class="flex justify-between items-center mt-[3px]">
+									<div class="text-sm leading-[24.5px]">20.08.2024</div>
+									<div class="toggle-detail flex items-center gap-[5px] text-xs text-dark-4">
+										Zobraziť detail
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="4" viewBox="0 0 7 4" fill="none">
+											<path d="M0.495117 0.597656L2.6606 3.05763C2.97183 3.41118 3.52274 3.41118 3.83397 3.05763L5.99945 0.597656" stroke="#ADB3BF"/>
+										</svg>
+									</div>
+								</div>
+
+								<div class="toggle-content hidden">
+									<div class="md:hidden h-px w-full bg-white/10 my-5"></div>
+
+									<div class="text-center text-white text-xs leading-[21px] mb-[11px]">
+										Kupónik nájdete a môžete si ho aktivovať v sekcii 2
+									</div>
+
+									<div class="text-center">
+										<button class="m-auto text-xs text-primary-orange leading-[21px] py-[7px] px-[30px] border border-primary-orange rounded-lg">
+											Moje výhody
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="content-3-mobile" class="hidden bg-[#30415D] px-[25px] py-[25px] rounded-2xl">
+							<div class="text-sm font-bold leading-[24.5px] mb-[15px]">Podmienky</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="space-x-4 mt-10 text-center">
+		<button id="openWinModal" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Výhra</button>
+		<button id="openLossModal" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Prehra</button>
+		<button id="openNextSpinModal" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Ďalšie točenie</button>
+		<button id="openNoSpinModal" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Žiadne točenie</button>
+		<button id="openMoreSpinsModal" class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">Ako
+			získať viac točení</button>
+	</div>
+
+	<!-- MODALS -->
+	<div>
+		<div id="overlay" class="fixed inset-0 bg-primary-blue-dark bg-opacity-90 backdrop-blur-sm hidden z-[60]"></div>
+
+		<div id="modalWin" class="fixed inset-0 flex items-center justify-center hidden z-[60] px-3">
+			<div class="bg-pastel-green-light pt-[37px] pb-[30px] px-[30px] rounded-2xl shadow-lg w-[335px] text-center relative">
+				<div class="absolute top-[-15px] right-[-20px] close-button hover:cursor-pointer">
+					<img src="{$basePath}/new-design/close-modal-wheel.svg" alt="zavriet">
+				</div>
+				<div class="absolute top-[-13px] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+					<img src="{$basePath}/new-design/wheel-win-modal-bg.png" alt="win">
+				</div>
+				<div class="text-[20px] font-bold text-dark-1 leading-[35px] mb-[15px]">Gratulujeme!</div>
+				<div
+					class="text-[20px] leading-[30px] py-5 px-[35px] rounded-2xl text-secondary-green mb-[15px]"
+					style="box-shadow: 0px 0px 27.956px 0px rgba(102, 185, 64, 0.47);"
+				>
+					<span class="font-bold">Vyhrávate 2 € kupónik </span>k ďalšiemu nákupu
+				</div>
+				<div class="m-auto text-xs leading-[21px] text-dark-2 max-w-[223px] mb-2.5">
+					Kupónik nájdete a môžete si ho aktivovať v sekcii <a class="underline font-bold" href="#">vaše výhody.</a>
+				</div>
+				<button
+					class="text-sm bg-orange-gradient w-full text-white rounded-xl py-[14px] font-bold hover:bg-orange-gradient-hover">
+					Vaše výhody
+				</button>
+			</div>
+		</div>
+
+		<div id="modalLoss" class="fixed inset-0 flex items-center justify-center hidden z-[60] px-3">
+			<div
+				class="bg-pastel-orange-light pt-[37px] pb-[30px] px-[30px] rounded-2xl shadow-lg w-[335px] text-center relative">
+				<div class="absolute top-[-15px] right-[-20px] close-button hover:cursor-pointer">
+					<img src="{$basePath}/new-design/close-modal-wheel.svg" alt="zavriet">
+				</div>
+				<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+					<img src="{$basePath}/new-design/wheel-loss-modal-bg.png" alt="win">
+				</div>
+				<div class="text-[20px] font-bold text-dark-1 leading-[35px] mb-[5px]">Tentokrát to nevyšlo</div>
+				<div class="m-auto text-xs leading-[21px] text-dark-2 max-w-[223px]">
+					Skúste zatočiť znova
+				</div>
+			</div>
+		</div>
+
+		<div id="modalNextSpin" class="fixed inset-0 flex items-center justify-center hidden z-[60] px-3">
+			<div
+				class="bg-pastel-orange-light pt-[37px] pb-[30px] px-[30px] rounded-2xl shadow-lg w-[335px] text-center relative">
+				<div class="absolute top-[-15px] right-[-20px] close-button hover:cursor-pointer">
+					<img src="{$basePath}/new-design/close-modal-wheel.svg" alt="zavriet">
+				</div>
+				<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+					<img src="{$basePath}/new-design/wheel-next-spin-modal-bg.png" alt="win">
+				</div>
+				<div class="text-[20px] font-bold text-dark-1 leading-[35px] mb-[5px]">Ďalší pokus</div>
+				<div class="m-auto text-xs leading-[21px] text-dark-2 max-w-[223px]">
+					Skúste zatočiť znova
+				</div>
+			</div>
+		</div>
+
+		<div id="modalNoSpin" class="fixed inset-0 flex items-center justify-center hidden z-[60] px-3">
+			<div
+				class="bg-pastel-orange-light pt-[37px] pb-[58px] px-[30px] rounded-2xl shadow-lg w-[335px] text-center relative">
+				<div class="absolute top-[-15px] right-[-20px] close-button hover:cursor-pointer">
+					<img src="{$basePath}/new-design/close-modal-wheel.svg" alt="zavriet">
+				</div>
+				<div class="text-[20px] font-bold text-dark-1 leading-[35px] mb-[5px]">Dnes už nemáte zatočnie</div>
+				<div class="m-auto text-xs leading-[21px] text-dark-2 max-w-[223px] mb-[46px]">
+					Príďte si zatočiť znova zajtra.
+				</div>
+				<div class="font-bold text-dark-1 leading-[31.5px] mb-[15px]">Vyhral dnes váš šťastný obchod?</div>
+				<button
+					class="bg-orange-gradient w-full text-white rounded-xl py-[14px] font-bold hover:bg-orange-gradient-hover"
+					style="box-shadow: 6px 6px 13.5px 0 rgba(239, 127, 26, 0.51);"
+				>
+					Skontrolovať štastný obchod
+				</button>
+			</div>
+		</div>
+
+		<div id="modalMoreSpins" class="fixed inset-0 flex items-center justify-center hidden z-[60] px-3">
+			<div class="bg-white py-5 px-5 rounded-2xl shadow-lg w-[335px] relative">
+				<div class="absolute top-[-15px] right-[-20px] close-button hover:cursor-pointer">
+					<img src="{$basePath}/new-design/close-modal-wheel.svg" alt="zavriet">
+				</div>
+				<div class="text-[20px] font-bold text-dark-1 leading-[31.5px] mb-[5px]">Ako získať viac zatočení?</div>
+				<div class="text-xs leading-[21px] text-dark-2 max-w-[223px]">
+					Ďalšie zatočenie získate:
+				</div>
+				<div class="h-px w-full bg-light-5 my-5"></div>
+
+				<div class="text-dark-1">
+					<div class="text-sm font-medium leading-[24.5px] mb-[5px]">1. Pozvaním priateľa do Tipli</div>
+					<div class="text-xs leading-[21px] mb-2.5">Získajte 10 zatočení. Ak však pozvaný kamarát cez Tipli aj
+						nakúpi, získate až	5 €.</div>
+					<a href="#" class="flex items-center font-bold gap-2.5 text-primary-orange text-xs leading-[21px]">
+						Chcem pozvať priateľa
+						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+							<path d="M1 9L9 1M8.99868 7.77928L8.99868 1.00026L2.21965 1.00025" stroke="#EF7F1A" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</a>
+				</div>
+				<div class="h-px w-full bg-light-5 my-5"></div>
+
+				<div class="text-dark-1">
+					<div class="text-sm font-medium leading-[24.5px] mb-[5px]">1. Pozvaním priateľa do Tipli</div>
+					<div class="text-xs leading-[21px] mb-2.5">Získajte 10 zatočení. Ak však pozvaný kamarát cez Tipli aj
+						nakúpi, získate až	5 €.</div>
+					<a href="#" class="flex items-center font-bold gap-2.5 text-primary-orange text-xs leading-[21px]">
+						Chcem pozvať priateľa
+						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+							<path d="M1 9L9 1M8.99868 7.77928L8.99868 1.00026L2.21965 1.00025" stroke="#EF7F1A" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script n:syntax="off">
+	function wheelOfFortune(selector) {
+		const node = document.querySelector(selector)
+		if (!node) return
+
+		const spinButton = document.getElementById('button')
+		const wheel = node.querySelector('ul')
+		const resultDiv = document.createElement('div')
+		node.appendChild(resultDiv)
+
+		let spinning = false
+		let stopRequested = false
+		let previousEndDegree = 0
+		const segmentCount = 12
+		const segmentDegrees = 360 / segmentCount
+
+		// Odstránenie dlhých výpočtov
+		const results = [
+			'Výhra', 'dnes to nevyšlo', 'ďalší pokus',
+			'dnes to nevyšlo', 'ďalší pokus', 'dnes to nevyšlo',
+			'výhra', 'dnes to nevyšlo', 'ďalší pokus',
+			'dnes to nevyšlo', 'ďalší pokus', 'dnes to nevyšlo'
+		]
+
+		const initialRotation = (new Date().getSeconds() / 60) * 360
+		wheel.style.transform = `rotate(${initialRotation}deg)`
+		previousEndDegree = initialRotation
+
+		let currentRotationSpeed = 0
+		let lastTimestamp = 0
+		let currentDegrees = initialRotation
+		let requestId = null
+
+		const ACCELERATION = 5
+		const MAX_SPEED = 540
+		const DECELERATION = 5
+
+		const animate = (timestamp) => {
+			if (!lastTimestamp) lastTimestamp = timestamp
+			const deltaTime = timestamp - lastTimestamp
+			lastTimestamp = timestamp
+
+			if (spinning && !stopRequested) {
+				currentRotationSpeed = Math.min(currentRotationSpeed + ACCELERATION, MAX_SPEED)
+			} else if (stopRequested) {
+				currentRotationSpeed = Math.max(currentRotationSpeed - DECELERATION, 0)
+				if (currentRotationSpeed === 0) {
+					spinning = false
+					stopRequested = false
+					spinButton.querySelector('div').textContent = 'Zatočiť'
+					spinButton.classList.remove('disabled')
+					spinButton.disabled = false
+
+					const finalDegree = currentDegrees % 360
+					const adjustedDegree = (360 - finalDegree + 270 + (segmentDegrees / 2)) % 360
+					const segmentIndex = Math.floor(adjustedDegree / segmentDegrees)
+					const result = results[segmentIndex]
+					console.log('Segment index:', segmentIndex, 'Result:', result)
+
+					cancelAnimationFrame(requestId)
+					requestId = null
+					return
+				}
+			}
+
+			currentDegrees = (currentDegrees + (currentRotationSpeed * deltaTime) / 1000) % 360
+			wheel.style.transform = `rotate(${currentDegrees}deg)`
+			requestId = requestAnimationFrame(animate)
+		}
+
+		spinButton.addEventListener('click', () => {
+			if (!spinning && !stopRequested) {
+				spinning = true
+				currentRotationSpeed = 100
+
+				let countdown = 3
+				spinButton.disabled = true // Deaktivujeme tlačidlo na celé trvanie odpočítavania
+				spinButton.classList.add('disabled')
+
+				// Zobrazenie prvotného odpočítavania
+				spinButton.querySelector('div').textContent = `${countdown}...`
+				countdown--
+
+				const countdownInterval = setInterval(() => {
+					spinButton.querySelector('div').textContent = `${countdown}...`
+					countdown--
+
+					if (countdown < 0) {
+						clearInterval(countdownInterval)
+						// Povolíme tlačidlo po skončení odpočítavania
+						spinButton.disabled = false
+						spinButton.classList.remove('disabled')
+						spinButton.querySelector('div').innerHTML = '<span class="animate-pulse">Zastaviť</span>'
+					}
+				}, 1000)
+
+				lastTimestamp = 0
+				if (!requestId) {
+					requestId = requestAnimationFrame(animate)
+				}
+			} else if (spinning && !stopRequested && !spinButton.disabled) {
+				// Povolenie zastavenia animácie len ak tlačidlo nie je deaktivované
+				stopRequested = true
+				spinButton.querySelector('div').innerHTML =
+					'<div class="flex flex-col text-sm md:text-lg text-base animate-pulse"><div>🍀</div><div>Veľa</div><div>šťastia!</div></div>'
+			}
+		})
+	}
+
+	wheelOfFortune('.ui-wheel-of-fortune')
+
+	// TABS
+	const tabs = document.querySelectorAll('.item-tab');
+	const mobileTabs = document.querySelectorAll('.item-tab-mobile');
+
+	document.getElementById('content-1').classList.remove('hidden');
+	tabs[0].classList.add('bg-[#30415D]');
+
+	tabs.forEach((tab, index) => {
+		tab.addEventListener('click', function () {
+			document.querySelectorAll('#content-1, #content-2, #content-3').forEach(content => content.classList.add('hidden'));
+			document.getElementById(`content-${index + 1}`).classList.remove('hidden');
+
+			tabs.forEach(t => t.classList.remove('bg-[#30415D]'));
+			tab.classList.add('bg-[#30415D]');
+		});
+	});
+
+	// TABS MOBILE
+	document.getElementById('content-1-mobile').classList.remove('hidden');
+	mobileTabs[0].classList.add('bg-[#30415D]');
+
+	mobileTabs.forEach((tab, index) => {
+		tab.addEventListener('click', function () {
+			document.querySelectorAll('#content-1-mobile, #content-2-mobile, #content-3-mobile').forEach(content => content.classList.add('hidden'));
+			document.getElementById(`content-${index + 1}-mobile`).classList.remove('hidden');
+
+			mobileTabs.forEach(t => t.classList.remove('bg-[#30415D]'));
+			tab.classList.add('bg-[#30415D]');
+		});
+	});
+
+	// HISTORY CARD TOGGLE
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('.history-card').forEach(card => {
+			const toggleButton = card.querySelector('.toggle-detail');
+			const toggleContent = card.querySelector('.toggle-content');
+
+			toggleButton.addEventListener('click', () => {
+				toggleContent.classList.toggle('hidden');
+			});
+		});
+	});
+
+	// MODALS
+	const overlay = document.getElementById('overlay');
+	const modalWin = document.getElementById('modalWin');
+	const modalLoss = document.getElementById('modalLoss');
+	const modalNextSpin = document.getElementById('modalNextSpin');
+	const modalNoSpin = document.getElementById('modalNoSpin');
+	const modalMoreSpins = document.getElementById('modalMoreSpins');
+
+	document.getElementById('openWinModal').addEventListener('click', () => openModal(modalWin));
+	document.getElementById('openLossModal').addEventListener('click', () => openModal(modalLoss));
+	document.getElementById('openNextSpinModal').addEventListener('click', () => openModal(modalNextSpin));
+	document.getElementById('openNoSpinModal').addEventListener('click', () => openModal(modalNoSpin));
+	document.getElementById('openMoreSpinsModal').addEventListener('click', () => openModal(modalMoreSpins));
+
+	function openModal(modal) {
+		overlay.classList.remove('hidden');
+		modal.classList.remove('hidden');
+	}
+
+	function closeAllModals() {
+		overlay.classList.add('hidden');
+		modalWin.classList.add('hidden');
+		modalLoss.classList.add('hidden');
+		modalNextSpin.classList.add('hidden');
+		modalNoSpin.classList.add('hidden');
+		modalMoreSpins.classList.add('hidden');
+	}
+
+	document.querySelectorAll('.close-button').forEach(button => {
+		button.addEventListener('click', closeAllModals);
+	});
+
+	overlay.addEventListener('click', closeAllModals);
+</script>
+</body>
+</html>
